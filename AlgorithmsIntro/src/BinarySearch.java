@@ -36,10 +36,10 @@ public class BinarySearch
          }
       }
       // Print the random array
-      for (int i = 0; i < a.length; i++)
+      /*for (int i = 0; i < a.length; i++)
       {
          System.out.println(a[i]);
-      }
+      }*/
       System.out.println(search(a, a[a.length-1]));
       //System.out.printf("Cnt: %d%n", cnt);
 
