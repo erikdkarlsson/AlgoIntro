@@ -7,6 +7,7 @@
 /Stack.class
 /Percolation.zip
 /Queue.class
+<<<<<<< HEAD
 /Stack$Node.class
 /Queue$node.class
 /Queue$Node.class
@@ -25,3 +26,9 @@
 /Selection.class
 /Tentamen_HT21_erikau1.class
 /Test12.class
+||||||| c7534a3
+=======
+/Stack$Node.class
+/Queue$node.class
+/Queue$Node.class
+>>>>>>> fa60fdffd1f6d15a79bb229ccf033a6902c16c34

@@ -1,3 +1,4 @@
+
 /**
  * A queue implementation, ie a FIFO queue
  * implemented as a linked list, with 
@@ -13,8 +14,26 @@
 
 import java.util.Iterator;
 
+
+
+
+/**
+ * A queue implementation, ie a FIFO queue
+ * implemented as a linked list, with 
+ * constant time operations for all methods
+ * supported operation
+ * push
+ * pop
+ * isEmpty
+ * 
+ * @author erikkarlsson
+ *
+ */
+
 public class Queue<Item> implements Iterable<Item>
+
 {
+
    private Node first = null;
    private Node last = null;
    private int N;
@@ -41,6 +60,8 @@ public class Queue<Item> implements Iterable<Item>
       N++;
    }
    
+
+   
    public Item dequeue()
    //Remove item from front of list, ie first
    {
@@ -51,6 +72,9 @@ public class Queue<Item> implements Iterable<Item>
       N--;
       return item;
    }
+   
+
+   
    public Iterator<Item> iterator()
    {return new ListIterator();}
    private class ListIterator implements Iterator<Item>
@@ -66,8 +90,16 @@ public class Queue<Item> implements Iterable<Item>
       }
    }
    
+
+   
+
+   
+   
+
+
    public static void main(String[] args)
    {
+
       Queue<String> q= new Queue<String>();
       q.enqueue("Kalle");
       q.enqueue("Nalle");
@@ -81,6 +113,17 @@ public class Queue<Item> implements Iterable<Item>
          System.out.println(fItem);
          
       }
+
+      Queue<String> q1= new Queue<String>();
+      q1.enqueue("Kalle");
+      q1.enqueue("Nalle");
+      q1.enqueue("Tjalle");
+      System.out.println(q1.dequeue());
+      System.out.println(q1.dequeue());
+      System.out.println(q1.dequeue());
+      //System.out.println(q.dequeue());
+
+
    }
 
 }
