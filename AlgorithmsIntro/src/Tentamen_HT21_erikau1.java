@@ -6,7 +6,8 @@ import java.util.regex.Pattern;
  * Program som låter användaren skriva när bilar anländer, när de lämnar samt
  * historik sorterat på ankomsttid eller reg nr.
  * Man kan även söka upp platsen bilen står på.
- * 
+ * OBS!!! sorteringen av reg och tid sorterar en för lite samt
+ * reg sorteringen är fel och behöver justeras
  * @author erikkarlsson
  *
  */
@@ -39,7 +40,8 @@ public class Tentamen_HT21_erikau1
       LocalTime[] historyIn = new LocalTime[HISTORY_SIZE];
       LocalTime[] historyOut = new LocalTime[HISTORY_SIZE];
       int[] historyCost = new int[HISTORY_SIZE];
-
+      
+      
       boolean quit;
       char choice;
 
@@ -79,7 +81,7 @@ public class Tentamen_HT21_erikau1
          }
          // Användaren har valt parkeringshistorik(reg nummer)
          case '5': {
-            printHistoryIn(historyReg, historyIn, historyOut, historyCost);
+            printHistoryReg(historyReg, historyIn, historyOut, historyCost);
             break;
          }
          // Användaren väljer att avsluta programmet

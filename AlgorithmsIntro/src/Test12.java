@@ -26,15 +26,15 @@ public class Test12
       historyOut[0] = LocalTime.parse("13:00");
       
       historyCost[1] = 30;
-      historyReg[1] ="ABC121";
+      historyReg[1] ="ADC125";
       historyIn[1] = LocalTime.parse("10:00");
       historyOut[1] = LocalTime.parse("13:00");
       historyCost[2] = 30;
-      historyReg[2] ="ABC125";
+      historyReg[2] ="AAC121";
       historyIn[2] = LocalTime.parse("12:00");
       historyOut[2] = LocalTime.parse("13:00");
       historyCost[3] = 30;
-      historyReg[3] ="ACC112";
+      historyReg[3] ="AAA111";
       historyIn[3] = LocalTime.parse("14:00");
       historyOut[3] = LocalTime.parse("13:00");
       sortIn(historyReg, historyIn, historyOut, historyCost);
@@ -73,7 +73,77 @@ public class Test12
 
       return inputString;
    }
+   
    public static void sortIn(String[] historyReg, LocalTime[] historyIn, LocalTime[] historyOut, int[] historyCost)
+   {
+
+      // Deklarera variabler
+      int len;
+      String temp;
+      LocalTime temp2;
+      LocalTime temp3;
+      int temp4;
+      int minOrMax;
+      
+      
+
+      // Initiera variabler
+      len = historyReg.length;
+      temp = historyReg[0];
+      minOrMax = 0;
+
+      for (int i = 0; i < historyReg.length; i++)
+      {
+         if (historyReg[i] == null) 
+         {
+            len = i;
+            break;
+         }
+      }
+      System.out.println(len);
+      if (len <=1)
+      {
+         return;
+      }
+      // Börja från vänster i arrayen
+      for (int i = 0; i < (len - 1); i++)
+      {
+         minOrMax = i;
+         // För varje position, kolla kvarvarande postioner, om någon är mindre el.
+         // större
+         for (int k = (i + 1); k < len; k++)
+         {
+            
+           
+               if (historyReg[k].compareTo(historyReg[minOrMax]) < 0)
+               {
+                  minOrMax = k;
+               }
+            
+         }
+
+         // Flytta minsta talet som hittas till nuvarande pos i array(inget händer om det
+         // redan var minsta el. största beroende på typ av sortering)
+         temp = historyReg[i];
+         temp2 = historyIn[i];
+         temp3 = historyOut[i];
+         temp4 = historyCost[i];
+
+         historyReg[i] = historyReg[minOrMax];
+         historyIn[i] = historyIn[minOrMax];
+         historyOut[i] = historyOut[minOrMax];
+         historyCost[i] = historyCost[minOrMax];
+
+         historyReg[minOrMax] = temp;
+         historyIn[minOrMax] = temp2;
+         historyOut[minOrMax] = temp3;
+         historyCost[minOrMax] = temp4;
+
+      }
+
+   }
+   
+   /*public static void sortIn(String[] historyReg, LocalTime[] historyIn, LocalTime[] historyOut, int[] historyCost)
    {
 
       // Deklarera variabler
@@ -139,7 +209,7 @@ public class Test12
 
       }
 
-   }
+   }*/
 
    public static void sortReg(String[] historyReg, LocalTime[] historyIn, LocalTime[] historyOut, int[] historyCost)
    {
@@ -197,7 +267,8 @@ public class Test12
          historyIn[i] = historyIn[minOrMax];
          historyOut[i] = historyOut[minOrMax];
          historyCost[i] = historyCost[minOrMax];
-
+         
+         
          historyReg[minOrMax] = temp;
          historyIn[minOrMax] = temp2;
          historyOut[minOrMax] = temp3;

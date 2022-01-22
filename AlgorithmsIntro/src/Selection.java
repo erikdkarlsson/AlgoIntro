@@ -1,7 +1,16 @@
 import java.security.SecureRandom;
 import java.util.Iterator;
 import java.security.SecureRandom;
-
+/**
+ * Implements a few sorts, notes their space and time
+ * complexity, and also whether the sorts are stable
+ * for instance mergesort and insertion sort are stable
+ * shell sort and selection sort are not stable,
+ * stable sorts are sorts that preserve order between
+ * keys that are equal
+ * @author erikkarlsson
+ *
+ */
 public class Selection
 {
    final static int CUTOFF = 7;
@@ -9,7 +18,7 @@ public class Selection
 
    public static void main(String[] args)
    {
-      final int ALENGTH = 5000000;
+      final int ALENGTH = 20000000;
 
       //static Integer[] a = new Integer[ALENGTH];
       //static Integer[] aux = new Integer[ALENGTH];
