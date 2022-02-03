@@ -35,6 +35,15 @@ public class AlgoritmsIntro1116 {
 		if (N == 1) return 1;
 		return fib(N-1)+fib(N-2);
 	}
+	
+	/**
+	 * This function is a "helper" function overloaded for long F(int n). It hides
+	 * for the consumer of the API the need for the long[] a argument, which is used
+	 * for memoization ie speeding thereby avoiding repeated solutions
+	 * @param N
+	 * @param a
+	 * @return
+	 */
 	public static long F(int N, long[] a)
 	{
 		if (N==0) return 0;

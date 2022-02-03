@@ -14,7 +14,7 @@ public class AlgorithmsIntro
       int noTwo = 0;
       int noThree = 0;
       
-      //Takes three numbers as arguments in try block, to make sure user entered correct cla
+      //Takes three numbers as arguments in try block, to make sure user entered correct type
       try
       {
       noOne = Integer.parseInt(args[0]);

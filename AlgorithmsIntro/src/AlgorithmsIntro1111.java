@@ -2,7 +2,7 @@
 public class AlgorithmsIntro1111 {
 
 	public static void main(String[] args) {
-		// Test cases
+		// Test case
 		boolean[][] a = { {true, false,true}
 						, {false, true, false}};
 		
